@@ -411,7 +411,6 @@ DEPENDENCIES
   tweetstream
   twitter_oauth!
   tzinfo
-  tzinfo-data
   uglifier
   webrat
   will_paginate (~> 3.0.pre2)
