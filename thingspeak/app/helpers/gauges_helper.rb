@@ -1,0 +1,2 @@
+module GaugesHelper
+end
