@@ -60,3 +60,44 @@ At this point you should be connected and you should see the server's shell:
 ```
 ubuntu@thingspeak:~$
 ```
+
+# Install Docker
+
+Install Docker
+https://docs.docker.com/install/
+
+# Build the Docker image
+
+Clone the this repository.
+```
+$ git clone https://github.com/Brilliant-Labs/bboard-cloud.git
+```
+
+Navigate to the repository folder.
+```
+$ cd bboard-cloud.git
+```
+
+Build the docker image (Takes up to 30min)
+```
+$ docker build -t bbcloud .
+```
+
+# Run the Docker image
+Run a docker instance of mysql 5.5.
+```
+$ docker run --name mysql55 -e MYSQL_ROOT_PASSWORD=speak -d mysql:5.5
+```
+
+Run the image that was built, and link it to the sql db.
+```
+$ docker run --name bbcloudcontainer -p 80:80 --link mysql55:mysql -d bbcloud
+```
+
+Finally build the database
+```
+$ docker exec -it bbcloudcontainer rake db:create
+$ docker exec -it bbcloudcontainer rake db:schema:load
+```
+
+**Navigate to http://localhost/**
