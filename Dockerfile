@@ -10,14 +10,17 @@ RUN apt-get -o Acquire::Check-Valid-Until=false update
 RUN apt-get upgrade -y
 RUN apt-get install -y build-essential libpq-dev git
 
-WORKDIR /app/
 
 #thingspeak setup
 #RUN git clone https://github.com/Brilliant-Labs/bboard-cloud.git
 #WORKDIR /app/bboard-cloud/thingspeak
-COPY /thingspeak/ .
+
+COPY . .
+#thingspeak setup
+WORKDIR /thingspeak
 RUN gem install tzinfo-data -v 1.2013.8
 RUN bundle install
+
 #COPY /thingspeak/app/ /app/app/
 #COPY /thingspeak/autotest /app/autotest/
 #COPY /thingspeak/bin/ /app/bin/
