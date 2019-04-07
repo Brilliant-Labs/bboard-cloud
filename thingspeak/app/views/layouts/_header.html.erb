@@ -28,10 +28,17 @@
   <script type="text/javascript" src="//code.jquery.com/jquery-1.9.1.min.js"></script>
   <script type='text/javascript' src="//netdna.bootstrapcdn.com/bootstrap/3.1.0/js/bootstrap.min.js"></script>
   <script type="text/javascript" src="//ajax.aspnetcdn.com/ajax/jquery.ui/1.9.1/jquery-ui.min.js"></script>
+
   <%= javascript_include_tag 'application', "data-turbolinks-track" => true %>
 
   <%= csrf_meta_tag %>
 
   <%= yield :head %>
+  <style>
+  .panel-heading{
+    background: #9B55A3 !important;
+  }
+
+  </style>
 </head>
 
