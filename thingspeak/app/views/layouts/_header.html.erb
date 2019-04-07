@@ -1,23 +1,48 @@
 <head>
-  <title><%= @title.nil? ? (@menu.nil? ? 'ThingSpeak' : @menu.titleize + ' - ThingSpeak') : @title + ' - ThingSpeak' %></title>
   <meta content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport" />
-  <meta name="description" content="<%= "#{@title} on ThingSpeak: " if @title.present? %>Open source data platform and API for the Internet of Things.">
   <meta name="keywords" content="iot, internet of things, iot platform, github, open source, internet of things platform, iobridge">
+  <!-- Primary Meta Tags -->
+  <title>Brilliant Labs IoT Cloud</title>
+  <meta name="title" content="Brilliant Labs IoT Cloud">
+  <meta name="description" content="Open source IoT cloud service for b.Board">
+
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="http://cloud.brilliantlabs.app/">
+  <meta property="og:title" content="Brilliant Labs IoT Cloud">
+  <meta property="og:description" content="Open source IoT cloud service for b.Board">
+  <meta property="og:image" content="">
+
+  <!-- Twitter -->
+  <meta property="twitter:card" content="summary_large_image">
+  <meta property="twitter:url" content="http://cloud.brilliantlabs.app/">
+  <meta property="twitter:title" content="Brilliant Labs IoT Cloud">
+  <meta property="twitter:description" content="Open source IoT cloud service for b.Board">
+  <meta property="twitter:image" content="">
 
   <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootswatch/3.1.1/cerulean/bootstrap.min.css" />
   <link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css" media="screen" rel="stylesheet" />
+
   <%= stylesheet_link_tag 'application', "data-turbolinks-track" => true %>
 
   <script type="text/javascript" src="//code.jquery.com/jquery-1.9.1.min.js"></script>
   <script type='text/javascript' src="//netdna.bootstrapcdn.com/bootstrap/3.1.0/js/bootstrap.min.js"></script>
   <script type="text/javascript" src="//ajax.aspnetcdn.com/ajax/jquery.ui/1.9.1/jquery-ui.min.js"></script>
+
   <%= javascript_include_tag 'application', "data-turbolinks-track" => true %>
 
   <%= csrf_meta_tag %>
-  <% if Rails.env == 'production' %>
-    <%= render 'layouts/ga' %>
-  <% end %>
 
   <%= yield :head %>
+  <style>
+  .panel-heading{
+    background: #9B55A3 !important;
+  }
+  .navbar-inverse .navbar-nav>.open>a, .navbar-inverse .navbar-nav>.open>a:hover, .navbar-inverse .navbar-nav>.open>a:focus {
+    background-color:  #00ab9b !important;
+    color: #ffffff;
+  }
+
+  </style>
 </head>
 

@@ -54,12 +54,12 @@
           <a href="#" class="dropdown-toggle" data-toggle="dropdown"><%=t(:support)%> <b class="caret"></b></a>
           <ul class="dropdown-menu">
             <li><a href="/docs"><%= t(:documentation) %></a></li>
-            <li><a href="/docs/tutorials/"><%= t(:tutorials) %></a></li>
-            <li><a href="http://community.thingspeak.com/forum/"><%= t(:forum) %></a></li>
+            <li><a href="mailto:info@brilliantlabs.ca"><%= t(:Questions) %></a></li> 
+            <li><a href="https://www.brilliantlabs.ca/learn"><%= t(:learn) %></a></li>
           </ul>
         </li>
-
-        <li><a href="http://community.thingspeak.com/"><%= t(:blog)%></a></li>
+        <li><a href="https://code.brilliantlabs.app" target="_blank">Code Editor</a></li>
+        <li><a href="https://www.brilliantlabs.ca/blog"><%= t(:blog)%></a></li>
 
         <% if current_user %>
           <li><%= link_to t(:signout), logout_path %></li>
